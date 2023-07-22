@@ -10,11 +10,9 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, len, count = 0;
+	int i = 0, len, count = 0, j;
 		
-	char c;
-
-	char *s;
+	int d, digits = 0, divisor = 1, digit, temp;
 	
 	va_list args;
 
@@ -31,32 +29,34 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch(format[i])
+			if (format[i] == 'i' || format[i] == 'd')
 			{
-				case 'c':
+				d = va_arg(args, int);
+				if (d < 0)
 				{
-					c = va_arg(args, int);
-					_putchar(c);
+					d = -d;
+					_putchar('-');
 					count++;
-					break;
 				}
-				case 's':
+				temp = d;
+				while (temp / 10)
 				{
-					s = va_arg(args, char *);
-					for (j = 0; s[j] != '\0'; j++)
-					{
-						_putchar(s[j]);
-						count++;
-					}
-					break;
+					temp = temp / 10;
+					digits++;
 				}
-				case '%':
+				for (j = 1; j < digits; j++)
+					divisor *= 10;
+
+				while (divisor != 0)
 				{
-					_putchar('%');
+					digit = d % divisor;
+				        _putchar(digit + '0');
 					count++;
-					break;
+					divisor /= 10;
+					d %= divisor;	
 				}
-			}	
+			}
+					
 		}
 		else if (format[i] != '%')
 		{
@@ -65,5 +65,13 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
+	va_end(args);
 	return (count);
+}
+
+int main(void)
+{
+	_printf("Numbers: %i %d", 100, 11);
+
+	return (0);
 }
