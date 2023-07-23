@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int i = 0, j, len, count = 0;
 
 	char c;
-		
+
 	char *str;
 
 	va_list args;
@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch(format[i])
+			switch (format[i])
 			{
 				case 'c':
 				{
