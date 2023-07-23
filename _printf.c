@@ -39,10 +39,3 @@ int _printf(const char *format, ...)
 	return (count);
 
 }
-
-int main(void)
-{
-	_printf("NUMBER: %d", 55);
-
-	return (0);
-}
