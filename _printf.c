@@ -6,6 +6,8 @@
  * @format: string input that would be printed out
  * Return: the function returns the number of characters printed
 */
+#define BUFFER_SIZE 1024
+
 int _printf(const char *format, ...)
 {
 	int i = 0, len, count = 0;
@@ -87,5 +89,7 @@ int _printf(const char *format, ...)
 		i++;	
 	}
 	va_end(args);
+	flush_buffer();
+
 	return (count);
 }

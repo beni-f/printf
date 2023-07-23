@@ -16,7 +16,7 @@ int print_string(va_list list)
 	
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		append_char(str[i]);
+		_putchar(str[i]);
 		count++;
 	}
 
