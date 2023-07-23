@@ -26,6 +26,9 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == 'd' || format[i] == 'i')
+				print_number(args);
+
 			switch (format[i])
 			{
 				case 'c':
@@ -60,7 +63,16 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		i++;
+		
+		
 	}
 	va_end(args);
 	return (count);
+}
+
+int main(void)
+{
+	_printf("%i", 55);
+	
+	return (0);
 }
