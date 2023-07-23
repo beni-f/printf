@@ -30,12 +30,17 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 				{
-					print_char(args);
+					count += print_char(args);
 					break;
 				}
 				case 's':
 				{
-					print_string(args);
+					count += print_string(args);
+					break;
+				}
+				case '%':
+				{
+					_putchar('%');
 					break;
 				}
 			};
