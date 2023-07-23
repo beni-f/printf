@@ -79,6 +79,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	write_buffer(void);
-
 	return (count);
 }
