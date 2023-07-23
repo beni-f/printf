@@ -3,7 +3,7 @@
 #include <stdarg.h>
 /**
  * _printf - produces output according to a format
- *@format: string input that would be printed out
+ * @format: string input that would be printed out
  * Return: the function returns the number of characters printed
 */
 int _printf(const char *format, ...)
