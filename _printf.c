@@ -23,7 +23,22 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == 'd' || format[i] == 'i')
+			{
 				print_number(args);
+			}
+			switch (format[i])
+			{
+				case 'c':
+				{
+					print_char(args);
+					break;
+				}
+				case 's':
+				{
+					print_string(args);
+					break;
+				}
+			};
 
 		}
 		else if (format[i] != '%')
@@ -35,4 +50,10 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+int main(void)
+{
+	_printf("NAME: %s %c \n AGE: %i", "BENI", 'f', 20);
+
+	return (0);
 }
