@@ -10,6 +10,8 @@ int _printf(const char *format, ...)
 {
 	int i = 0, len, count = 0;
 
+	unsigned int x;
+
 	va_list args;
 
 	if (format == NULL)
@@ -28,7 +30,9 @@ int _printf(const char *format, ...)
 			}
 			if (format[i] == 'X')
 			{
-				count += print_hexa_uppercase(args);
+				x = va_arg(args, unsigned int);
+
+				count += print_hexa_uppercase(x);
 			}
 			if (format[i] == 'd' || format[i] == 'i')
 			{
@@ -44,6 +48,11 @@ int _printf(const char *format, ...)
 				case 's':
 				{
 					count += print_string(args);
+					break;
+				}
+				case 'S':
+				{
+					count += print_String(args);
 					break;
 				}
 				case 'b':
@@ -79,4 +88,10 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+int main(void)
+{
+    _printf("%S\n", "Best\nSchool");
+    return (0);
 }

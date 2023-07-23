@@ -6,14 +6,11 @@
  * @list: list
  * Return: retruns length of hexadecimal
 */
-int print_hexa_uppercase(va_list list)
+int print_hexa_uppercase(unsigned int x)
 {
-	unsigned int x;
-
-	int i = 0, j, count = 0;
 	char hexa[32];
 
-	x = va_arg(list, unsigned int);
+	int i = 0, j, count = 0;
 
 	if (x == 0)
 	{
@@ -31,7 +28,7 @@ int print_hexa_uppercase(va_list list)
 		}
 		x /= 16;
 		i++;
-	}
+	}	
 	for (j = i - 1; j >= 0; j--)
 	{
 		if (hexa[j] < 10)
