@@ -8,11 +8,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, j, len, count = 0;
-
-	char c;
-
-	char *str;
+	int i = 0, len, count = 0;
 
 	va_list args;
 
@@ -41,4 +37,12 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+
+}
+
+int main(void)
+{
+	_printf("NUMBER: %d", 55);
+
+	return (0);
 }
