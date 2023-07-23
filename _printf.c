@@ -38,6 +38,11 @@ int _printf(const char *format, ...)
 					count += print_string(args);
 					break;
 				}
+				case 'b':
+				{
+					count += print_binary(args);
+					break;
+				}
 				case '%':
 				{
 					_putchar('%');
@@ -56,4 +61,11 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+int main(void)
+{
+	_printf("%b", 98);
+	
+	return (0);
 }
