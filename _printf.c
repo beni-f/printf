@@ -51,9 +51,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-int main(void)
-{
-	_printf("NAME: %s %c \n AGE: %i", "BENI", 'f', 20);
-
-	return (0);
-}
