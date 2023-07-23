@@ -62,10 +62,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-int main(void)
-{
-	_printf("%b", 98);
-	
-	return (0);
-}
