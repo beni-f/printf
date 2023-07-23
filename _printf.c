@@ -80,10 +80,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-int main(void)
-{
-	_printf("%o \n%x \n%X \n%u", 98, 31, 31, 98);
-	printf("%u", -98);
-	return (0);
-}
