@@ -17,6 +17,12 @@ int print_unsigned(va_list list)
 		d = -d;
 		count++;
 	}
+	if (d == 0)
+	{
+		_putchar('0');
+		count++;
+		return (count);
+	}
 	temp = d;
 	while (temp != 0)
 	{
