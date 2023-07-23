@@ -8,7 +8,11 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, len, count = 0, j, d, digits = 0, digit, temp;
+	int i = 0, j, len, count = 0;
+
+	char c;
+		
+	char *str;
 
 	va_list args;
 
@@ -22,28 +26,32 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'i' || format[i] == 'd')
+			switch(format[i])
 			{
-				d = va_arg(args, int);
-				if (d < 0)
+				case 'c':
 				{
-					d = -d;
-					_putchar('-');
+					c = va_arg(args, int);
+					_putchar(c);
 					count++;
+					break;
 				}
-				temp = d;
-				while (temp != 0)
+				case 's':
 				{
-					temp = temp / 10;
-					digits++;
+					str = va_arg(args, char *);
+					for (j = 0; str[j] != '\0'; j++)
+					{
+						_putchar(str[j]);
+						count++;
+					}
+					break;
 				}
-				for (j = digits - 1; j >= 0; j--)
+				case '%':
 				{
-					digit = ((d / _pow(10, j)) % 10);
-					_putchar(digit + '0');
+					_putchar('%');
 					count++;
+					break;
 				}
-			}
+			};
 
 		}
 		else if (format[i] != '%')
@@ -55,4 +63,10 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+int main(void)
+{
+	_printf("this is %s %c", "beni", 'c');
+
+	return (0);
 }
