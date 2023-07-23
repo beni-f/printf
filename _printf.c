@@ -87,7 +87,7 @@ int _printf(const char *format, ...)
 		i++;	
 	}
 	va_end(args);
-	flush_buffer();
+	flush_buffer(void);
 
 	return (count);
 }
