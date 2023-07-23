@@ -12,11 +12,7 @@ int print_unsigned(va_list list)
 	int d, j, count = 0, digits = 0, temp, digit;
 
 	d = va_arg(list, int);
-	if (d < 0)
-	{
-		d = -d;
-		count++;
-	}
+
 	if (d == 0)
 	{
 		_putchar('0');
