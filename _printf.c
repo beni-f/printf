@@ -89,9 +89,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
-int main(void)
-{
-    _printf("%S\n", "Best\nSchool");
-    return (0);
-}
