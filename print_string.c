@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-int print_string(va_list list);
+int print_string(va_list list)
 {
 	char *str;
 	
-	int i;
+	int i, count = 0;
 
 	str = va_arg(list, char *);
 	
