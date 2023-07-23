@@ -64,9 +64,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-int main(void)
-{
-	_printf("this is %s %c", "beni", 'c');
-
-	return (0);
-}
