@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 'd' || format[i] == 'i')
 			{
-				print_number(args);
+				count += print_number(args);
 			}
 			switch (format[i])
 			{
