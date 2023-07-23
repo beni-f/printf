@@ -1,6 +1,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+int print_unsigned(va_list list);
+int print_hexa_uppercase(va_list list);
+int print_hexa_lowercase(va_list list);
+int print_octal(va_list list);
 int print_binary(va_list list);
 int print_char(va_list list);
 int print_string(va_list list);

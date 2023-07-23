@@ -22,6 +22,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == 'x')
+			{
+				count += print_hexa_lowercase(args);
+			}
+			if (format[i] == 'X')
+			{
+				count += print_hexa_uppercase(args);
+			}
 			if (format[i] == 'd' || format[i] == 'i')
 			{
 				count += print_number(args);
@@ -43,6 +51,16 @@ int _printf(const char *format, ...)
 					count += print_binary(args);
 					break;
 				}
+				case 'o':
+				{
+					count += print_octal(args);
+					break;
+				}
+				case 'u':
+				{
+					count += print_unsigned(args);
+					break;
+				}
 				case '%':
 				{
 					_putchar('%');
@@ -61,4 +79,11 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+int main(void)
+{
+	_printf("%o \n%x \n%X \n%u", 98, 31, 31, 98);
+	printf("%u", -98);
+	return (0);
 }
