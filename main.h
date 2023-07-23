@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+int print_pointer(va_list list);
 void flush_buffer(void);
 int print_unsigned(va_list list);
 int print_hexa_uppercase(unsigned int x);

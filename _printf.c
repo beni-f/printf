@@ -10,8 +10,6 @@ int _printf(const char *format, ...)
 {
 	int i = 0, len, count = 0;
 
-	unsigned int x;
-
 	va_list args;
 
 	if (format == NULL)
@@ -30,9 +28,7 @@ int _printf(const char *format, ...)
 			}
 			if (format[i] == 'X')
 			{
-				x = va_arg(args, unsigned int);
-
-				count += print_hexa_uppercase(x);
+				count += print_hexa_uppercase(va_arg(args, unsigned int));
 			}
 			if (format[i] == 'd' || format[i] == 'i')
 			{
@@ -68,6 +64,11 @@ int _printf(const char *format, ...)
 				case 'u':
 				{
 					count += print_unsigned(args);
+					break;
+				}
+				case 'p':
+				{
+					count += print_pointer(args);
 					break;
 				}
 				case '%':

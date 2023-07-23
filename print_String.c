@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
+#include <inttypes.h>
 
 int print_String(va_list list)
 {
