@@ -29,33 +29,6 @@ int _printf(const char *format, ...)
 			if (format[i] == 'd' || format[i] == 'i')
 				print_number(args);
 
-			switch (format[i])
-			{
-				case 'c':
-				{
-					c = va_arg(args, int);
-					_putchar(c);
-					count++;
-					break;
-				}
-				case 's':
-				{
-					str = va_arg(args, char *);
-					for (j = 0; str[j] != '\0'; j++)
-					{
-						_putchar(str[j]);
-						count++;
-					}
-					break;
-				}
-				case '%':
-				{
-					_putchar('%');
-					count++;
-					break;
-				}
-			};
-
 		}
 		else if (format[i] != '%')
 		{
