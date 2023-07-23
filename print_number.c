@@ -1,7 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
-
+/**
+ * print_number - prints integer
+ * @list: list
+ *
+ * Return: returns number length
+*/
 int print_number(va_list list)
 {
 	int d, j, count = 0, digits = 0, temp, digit;

@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-
+/**
+ * print_char - prints char
+ * @list: list
+ *
+ * Return: returns char length
+*/
 int print_char(va_list list)
 {
 	char c;
