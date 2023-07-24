@@ -16,6 +16,10 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (len = 0; format[len] != '\0'; len++)
 		;
+
+	if (len <= 0)
+		return (-1);
+
 	va_start(args, format);
 	while (i < len)
 	{
