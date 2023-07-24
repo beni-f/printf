@@ -1,25 +1,40 @@
-#include "main.h"
-#include <inttypes.h>
-#include <stdio.h>
 #include <stdarg.h>
-/**
- * print_pointer - prints pointer/address
- *
- * @list: list
- *
- * Return: the number of characters
-*/
+#include "main.h"
+
 int print_pointer(va_list list)
 {
-	int count = 0;
-
 	void *ptr = va_arg(list, void *);
 
-	uintptr_t ptr_value = (uintptr_t)ptr;
+	unsigned long int value = (unsigned long int)ptr;
+
+	char buffer[16];
+
+	int i = 0, j, digit, count = 0;
+
+	while (value != 0)
+	{
+		digit = value % 16;
+
+		buffer[i] = (digit < 10) ? ('0' + digit) : ('a' + digit - 10);
+		value /= 16;
+		
+		i++;
+	}
+
+	if (value == 0)
+	{
+		_putchar('0');
+		count++;
+	}
 	
 	count += _putchar('0');
 	count += _putchar('x');
-	count += print_hexa_uppercase(ptr_value);
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		count += _putchar(buffer[i] + '0');
+	}
 
 	return (count);
 }
+
