@@ -7,11 +7,10 @@
  *
  * Return: returns number length
 */
-int print_number(va_list list)
+int print_number(int d)
 {
-	int d, j, count = 0, digits = 0, temp, digit;
+	int j, count = 0, digits = 0, temp, digit;
 
- 	d = va_arg(list, int);
        	if (d < 0)
         { 
 		d = -d;

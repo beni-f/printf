@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			}
 			if (format[i] == 'd' || format[i] == 'i')
 			{
-				count += print_number(args);
+				count += print_number(va_arg(args, int));
 			}
 			switch (format[i])
 			{
@@ -77,6 +77,21 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				}
+				case ' ':
+				{
+					count += print_space(args);
+					break;
+				}
+				case '#':
+				{
+					count += print_hashflag(args);
+					break;
+				}
+				case '+':
+				{
+					count += print_sign(args);
+					break;
+				}	
 			};
 
 		}
