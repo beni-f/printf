@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
-void remove_char(char *str, char c);
 int print_hashflag(va_list list);
 int print_sign(va_list list);
 int print_space(va_list list);

@@ -17,5 +17,5 @@ int print_char(va_list list)
 	
 	count++;
 	
-	return (0);
+	return (count);
 }

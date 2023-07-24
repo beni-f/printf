@@ -79,7 +79,7 @@ int _printf(const char *format, ...)
 				}
 				case ' ':
 				{
-					count += print_space(args);
+					print_space(args);
 					break;
 				}
 				case '#':
@@ -101,8 +101,15 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		i++;	
-	}
+	}  
 	va_end(args);
 
 	return (count);
+}
+
+int main(void)
+{
+	_printf("% i", 98);
+
+	return 0;
 }
