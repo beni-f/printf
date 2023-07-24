@@ -106,10 +106,3 @@ int _printf(const char *format, ...)
 
 	return (count);
 }
-
-int main(void)
-{
-	_printf("% i", 98);
-
-	return 0;
-}
