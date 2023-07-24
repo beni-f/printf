@@ -13,6 +13,9 @@ int print_string(va_list list)
 	int i, count = 0;
 
 	str = va_arg(list, char *);
+
+	if (str == NULL)
+		return (-1);
 	
 	for (i = 0; str[i] != '\0'; i++)
 	{
