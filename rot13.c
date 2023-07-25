@@ -17,9 +17,6 @@ int rot13(va_list list)
 	char *rot = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	str = va_arg(list, char *);
 
-	if (str == NULL)
-		return (-1);
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		for (j = 0; c[j] != '\0'; j++)
@@ -29,7 +26,10 @@ int rot13(va_list list)
 				count += _putchar(rot[j]); 
 			}
 		}
-		count += _putchar(str[i]);
+		if (!rot[j])
+		{
+			count += _putchar(str[i]);
+		}
 	}
 	return (count);
 }	
