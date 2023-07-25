@@ -80,6 +80,11 @@ int _printf(const char *format, ...)
 					count += reverse_string(args);
 					break;
 				}
+				case 'R':
+				{
+					count += rot13(args);
+					break;
+				}
 				case '%':
 				{
 					_putchar('%');

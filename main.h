@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 int reverse_string(va_list list);
+int rot13(va_list list);
 int print_hashflag(va_list list);
 int print_sign(va_list list);
 int print_space(va_list list);
