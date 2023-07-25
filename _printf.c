@@ -117,10 +117,3 @@ int _printf(const char *format, ...)
 
 	return (count);
 }
-
-int main(void)
-{
-	_printf("%r","beni");
-
-	return 0;
-}
