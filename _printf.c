@@ -97,7 +97,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 				default:
-					return (-1);	
+					return (-1);
 			};
 
 		}
@@ -106,8 +106,8 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
-		i++;	
-	}  
+		i++;
+	}
 	va_end(args);
 
 	return (count);
