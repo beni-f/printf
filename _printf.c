@@ -95,7 +95,9 @@ int _printf(const char *format, ...)
 				{
 					count += print_sign(args);
 					break;
-				}	
+				}
+				default:
+					return (-1);	
 			};
 
 		}
