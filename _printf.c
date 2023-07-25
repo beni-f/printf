@@ -26,20 +26,24 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'x')
-			{
-				count += print_hexa_lowercase(args);
-			}
-			if (format[i] == 'X')
-			{
-				count += print_hexa_uppercase(va_arg(args, unsigned int));
-			}
-			if (format[i] == 'd' || format[i] == 'i')
-			{
-				count += print_number(va_arg(args, int));
-			}
 			switch (format[i])
 			{
+				case 'x':
+				{
+					count += print_hexa_lowercase(args);
+					break;
+				}
+				case 'X':
+				{
+					count += print_hexa_uppercase(va_arg(args, unsigned int));
+					break;
+				}
+				case 'd':
+				case 'i':
+				{
+					count += print_number(va_arg(args, int));
+					break;
+				}
 				case 'c':
 				{
 					count += print_char(args);
