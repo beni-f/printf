@@ -75,6 +75,11 @@ int _printf(const char *format, ...)
 					count += print_pointer(args);
 					break;
 				}
+				case 'r':
+				{
+					count += reverse_string(args);
+					break;
+				}
 				case '%':
 				{
 					_putchar('%');
@@ -111,4 +116,11 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	return (count);
+}
+
+int main(void)
+{
+	_printf("%r","beni");
+
+	return 0;
 }
